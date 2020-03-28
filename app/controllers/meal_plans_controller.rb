@@ -1,5 +1,14 @@
 class MealPlansController < ApplicationController
 
+    def index
+        meal_plans = MealPlan.all
+        options = {
+            include: [:meals, :recipes]
+        }
+
+        render json: MealPlanSerializer.new(meal_plans, options)
+    end
+
     def create
         meal_plan = MealPlan.create(meal_plan_params)
 
@@ -11,6 +20,14 @@ class MealPlansController < ApplicationController
         meal_plan.update(notes: params[:notes])
 
         render json: meal_plan
+    end
+
+    def show
+        meal_plan = MealPlan.find_by_id(params[:id])
+        options = {
+            include: [:meals, :recipes]
+        }
+        render json: MealPlanSerializer.new(meal_plan, options)
     end
 
     private
