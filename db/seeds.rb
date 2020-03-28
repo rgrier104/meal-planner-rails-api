@@ -18,4 +18,13 @@ Recipe.create(name: "Vegan Buffalo Chicken Dip", url: "https://www.noracooks.com
 Recipe.create(name: "Jackfruit Burrito Bowl", url: "https://myplantedplate.com/2018/08/20/jackfruit-burrito-bowl-vegan-gluten-free-grain-free/", meal_type: "Entree", cuisine: "Mexican")
 
 mp1 = MealPlan.create(name: "Marathon Training", notes: "List of ingredients")
+mp2 = MealPlan.create(name: "Quarantine 1 2020", notes: "List of ingredients")
 
+Meal.create(day: "Sunday", meal_type: "Breakfast", recipe_id: 2, meal_plan_id:1)
+Meal.create(day: "Tuesday", meal_type: "Lunch", recipe_id: 3, meal_plan_id:1)
+Meal.create(day: "Thursday", meal_type: "Dinner", recipe_id: 5, meal_plan_id:1)
+
+Meal.create(day: "Monday", meal_type: "Breakfast", recipe_id: 2, meal_plan_id:2)
+Meal.create(day: "Tuesday", meal_type: "Lunch", recipe_id: 1, meal_plan_id:2)
+Meal.create(day: "Tuesday", meal_type: "Dinner", recipe_id: 9, meal_plan_id:2)
+Meal.create(day: "Friday", meal_type: "Dinner", recipe_id: 6, meal_plan_id:2)
